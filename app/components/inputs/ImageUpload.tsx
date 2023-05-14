@@ -6,10 +6,10 @@ import { useCallback } from "react";
 import { TbPhotoPlus } from 'react-icons/tb'
 
 declare global {
-  var cloudinary: any
+  const cloudinary: any
 }
 
-const uploadPreset = "pgc9ehd5";
+const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string;
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
